@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "955902871586",
+    "project_id": "medlife-da560",
+    "storage_bucket": "medlife-da560.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955902871586:android:17c8a679fda69d3bb1227b",
+        "android_client_info": {
+          "package_name": "com.example.medlife_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955902871586-6kkr3qlg8j1l4h3e5dk4j0qlo8duvh0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj3ofGrYa_lofKBTyMcgpsrrWCuHEDM0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955902871586-6kkr3qlg8j1l4h3e5dk4j0qlo8duvh0d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "955902871586-uihns86s461k4skcpaikj6j0b8rkqjs4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.medlifeApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
