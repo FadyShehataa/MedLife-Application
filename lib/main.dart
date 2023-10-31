@@ -17,6 +17,7 @@ import 'package:medlife_app/modules/PATIENT/Reminder/presentation/manager/remind
 import 'package:medlife_app/modules/PATIENT/Search/data/repos/search_repo_impl.dart';
 import 'package:medlife_app/modules/PATIENT/Search/presentation/manager/filter_search_cubit/filter_search_cubit.dart';
 import 'package:medlife_app/modules/PATIENT/Search/presentation/manager/search_cubit/search_cubit.dart';
+import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/data/repos/pharmacist_products_repo.dart';
 import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/data/repos/pharmacist_products_repo_impl.dart';
 import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/presentation/manager/add_product_cubit/add_product_cubit.dart';
 import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/presentation/manager/pharmacist_product_cubit/pharmacist_product_cubit.dart';
@@ -203,12 +204,12 @@ class MyApp extends StatelessWidget {
             // Pharmacist
             BlocProvider(
               create: (context) => PharmacistProductCubit(
-                getIt.get<PharmacistProductsRepoImpl>(),
+                getIt.get<PharmacistProductsRepoImpl>() as PharmacistProductsRepo,
               ),
             ),
             BlocProvider(
               create: (context) => AddProductCubit(
-                getIt.get<PharmacistProductsRepoImpl>(),
+                getIt.get<PharmacistProductsRepoImpl>() as PharmacistProductsRepo,
               ),
             ),
             BlocProvider(
