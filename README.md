@@ -38,7 +38,7 @@ The app has two types of users: Patients and Pharmacists. The following are the 
 - **Edit Info**: enables pharmacists to edit their personal information, such as their password, name, and pharmacy name.
 
 
-## Architecture and Design Patterns
+## Enhancing Software Development with:
 
 The app follows industry-standard architecture and design patterns to ensure scalability, maintainability, and readability of code. These include:
 - Bloc pattern for state management
