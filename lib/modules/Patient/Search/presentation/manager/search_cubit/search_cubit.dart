@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
-import '../../../../Patient Home/data/models/pharmacy_model/pharmacy_model.dart';
-import '../../../../Prescription%20OCR/data/models/prescription_model/prescription_model.dart';
+import 'package:medlife_app/modules/PATIENT/Prescription%20OCR/data/models/prescription_model/prescription_model.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../../../core/utils/Controllers/Location.dart';
+import '../../../../Patient Home/data/models/pharmacy_model/pharmacy_model.dart';
 import '../../../../Patient Home/data/models/pharmacy_product_model/pharmacy_product_model.dart';
 import '../../../data/repos/search_repo.dart';
 
@@ -55,13 +55,13 @@ class SearchCubit extends Cubit<SearchState> {
     var result =
         await searchRepo.fetchProductInPharmacies(productName: productName);
 
-    result.fold((failure) => emit(SearchFailure(errMessage: failure.errMessage)),
-    (searchResult) {
+    result
+        .fold((failure) => emit(SearchFailure(errMessage: failure.errMessage)),
+            (searchResult) {
       Coordinate coordinate = Coordinate(lat!, long!);
 
-      List<PrescriptionModel> sortedItems = sortByDistance(coordinate, searchResult);
-
-
+      List<PrescriptionModel> sortedItems =
+          sortByDistance(coordinate, searchResult.cast<PrescriptionModel>());
 
       emit(SearchProductInPharmaciesSuccess(products: sortedItems));
     });

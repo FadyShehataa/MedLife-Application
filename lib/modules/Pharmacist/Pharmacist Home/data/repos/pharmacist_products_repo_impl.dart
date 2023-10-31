@@ -4,9 +4,9 @@ import 'package:dio/dio.dart';
 
 import 'package:medlife_app/core/errors/failures.dart';
 import 'package:medlife_app/core/utils/api_service.dart';
-import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/data/models/add_product_model/add_product_model.dart';
-import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/data/models/pharmacist_product_model/pharmacist_product_model.dart';
-import 'package:medlife_app/modules/PHARMACIST/Pharmacist%20Home/data/repos/pharmacist_products_repo.dart';
+import 'package:medlife_app/modules/Pharmacist/Pharmacist%20Home/data/models/add_product_model/add_product_model.dart';
+import 'package:medlife_app/modules/Pharmacist/Pharmacist%20Home/data/models/pharmacist_product_model/pharmacist_product_model.dart';
+import 'package:medlife_app/modules/Pharmacist/Pharmacist%20Home/data/repos/pharmacist_products_repo.dart';
 
 import '../../../../../core/utils/constants.dart';
 import '../models/pharmacist_product_model/pharmacist_created_product_model.dart';
@@ -22,8 +22,7 @@ class PharmacistProductsRepoImpl implements PharmacistProductsRepo {
       String pharmacyI = mainPharmacist!.pharmacyId!;
 
       var data = await apiService.get(
-          endPoint:
-              'product/system/products/pharmacy/$pharmacyI');
+          endPoint: 'product/system/products/pharmacy/$pharmacyI');
 
       List<PharmacistProductModel> products = [];
 
@@ -47,7 +46,8 @@ class PharmacistProductsRepoImpl implements PharmacistProductsRepo {
           endPoint: 'product/pharmacy/products/modify',
           bodyRequest: bodyRequest);
 
-      PharmacistProductModel product = PharmacistProductModel.fromJson(data['product']);
+      PharmacistProductModel product =
+          PharmacistProductModel.fromJson(data['product']);
 
       return right(product);
     } catch (e) {
@@ -105,7 +105,7 @@ class PharmacistProductsRepoImpl implements PharmacistProductsRepo {
           bodyRequest: bodyRequest);
 
       CreatedPharmacistProductModel product =
-        CreatedPharmacistProductModel.fromJson(data['product']);
+          CreatedPharmacistProductModel.fromJson(data['product']);
 
       return right(product);
     } catch (e) {

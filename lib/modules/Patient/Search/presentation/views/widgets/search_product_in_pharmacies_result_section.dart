@@ -4,7 +4,8 @@ import '../../../../../../core/widgets/custom_empty_widget.dart';
 import '../../../../../../core/widgets/custom_error_widget.dart';
 import '../../../../../../core/widgets/custom_loading_indicator.dart';
 import '../../../../../../main.dart';
-import '../../../../Prescription%20OCR/presentation/views/prescription_result_item.dart';
+import '../../../../Prescription OCR/data/models/prescription_model/prescription_model.dart';
+import '../../../../Prescription OCR/presentation/views/prescription_result_item.dart';
 import '../../manager/search_cubit/search_cubit.dart';
 
 class SearchProductInPharmaciesResultSection extends StatelessWidget {
@@ -19,7 +20,7 @@ class SearchProductInPharmaciesResultSection extends StatelessWidget {
             itemCount: state.products.length,
             itemBuilder: ((context, index) {
               return PrescriptionResultItem(
-                prescriptionModel: state.products[index],
+                prescriptionModel: state.products[index] as PrescriptionModel,
                 scale: MyApp.isMobile ? 1 : 1.5 * 0.75,
               );
             }),

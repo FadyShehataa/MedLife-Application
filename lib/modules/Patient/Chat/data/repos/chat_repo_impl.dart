@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 
 import 'package:medlife_app/core/errors/failures.dart';
 import 'package:medlife_app/core/utils/api_service.dart';
-import 'package:medlife_app/modules/PATIENT/Chat/data/model/message_model.dart';
+import 'package:medlife_app/modules/Patient/Chat/data/model/message_model.dart';
 
 import '../../../../../core/utils/constants.dart';
 import '../model/chat_model.dart';
@@ -60,4 +60,5 @@ class ChatsRepoImpl implements ChatsRepo {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
 }
